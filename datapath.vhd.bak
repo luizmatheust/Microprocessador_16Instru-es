@@ -1,0 +1,51 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.all;
+
+entity datapath is
+port(
+		--data in/out
+		entrada : in std_logic_vector(15 downto 0);
+		s : out std_logic_vector(15 downto 0);
+		dados : in std_logic_vector (7 downto 0); 
+		--controle in/out
+		ld_inputs, ld_s, clk: in std_logic;
+		clr_inputs, clr_s : in std_logic;
+		sel_m1 : in std_logic_vector(1 downto 0);
+		sel_m2 : in std_logic_vector (1 downto 0);
+		sel_m0 : in std_logic_vector (2 downto 0)
+		
+		
+);
+end datapath;
+
+architecture arch of datapath is
+signal ra_out, rb_out, rc_out, rd_out, mux1_out, mux2_out, mux0_out, alu_out, rin_out: std_logic_vector(15 downto 0);
+
+begin
+	ra : registrador port map(mux0_out, ra_out, clk, clr_inputs, ld_inputs);
+	rb : registrador port map(mux0_out, rb_out, clk, clr_inputs, ld_inputs);
+	rc : registrador port map(mux0_out, rc_out, clk, clr_inputs, ld_inputs);
+	rd : registrador port map(mux0_out, rd_out, clk, clr_inputs, ld_inputs);
+	rin: registrador port map(entrada, rin_out, clk, clr_inputs, ld_inputs);
+	rout: registrador port map(mux2_out, s, clk, clr_inputs, ld_inputs);
+	raux: registrador port map(x"00" & dados, s, clk, clr_inputs, ld_inputs);
+	
+	m1 : mux2 port map(ra_out,rb_out,rc_out,rd_out, mux1_out, sel_m1);--4x1
+	m2 : mux2 port map(ra_out,rb_out,rc_out,rd_out, mux2_out, sel_m2);--4x1
+	m0 : mux8 port map(alu_out, mem_dados, rin_out, raux_out, sel_m0);--8x1
+	alu : alu port map(m2_out, m1_out, c_out, cin, sel_I, alu_out);
+	
+ra_aux <= ra_out;
+rb_aux <= rb_out;
+rc_aux <= rc_out;
+rd_aux <= rd_out;
+	
+	
+end arch;
+
+
+
+
+
+

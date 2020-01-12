@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'clk'
+Slack : -7.131
+TNS   : -461.703
+
+Type  : Slow Model Setup 'controlador:controller|estado_atual.BUSCA'
+Slack : -2.743
+TNS   : -2.743
+
+Type  : Slow Model Setup 'controlador:controller|estado_atual.ENTRA'
+Slack : -2.019
+TNS   : -8.548
+
+Type  : Slow Model Setup 'controlador:controller|estado_atual.E'
+Slack : -1.238
+TNS   : -5.577
+
+Type  : Slow Model Hold 'clk'
+Slack : -3.542
+TNS   : -95.858
+
+Type  : Slow Model Hold 'controlador:controller|estado_atual.E'
+Slack : -2.470
+TNS   : -3.221
+
+Type  : Slow Model Hold 'controlador:controller|estado_atual.ENTRA'
+Slack : -2.252
+TNS   : -8.849
+
+Type  : Slow Model Hold 'controlador:controller|estado_atual.BUSCA'
+Slack : -1.017
+TNS   : -1.017
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -1.222
+TNS   : -131.222
+
+Type  : Slow Model Minimum Pulse Width 'controlador:controller|estado_atual.BUSCA'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'controlador:controller|estado_atual.E'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'controlador:controller|estado_atual.ENTRA'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'clk'
+Slack : -2.922
+TNS   : -179.334
+
+Type  : Fast Model Setup 'controlador:controller|estado_atual.BUSCA'
+Slack : -1.246
+TNS   : -1.246
+
+Type  : Fast Model Setup 'controlador:controller|estado_atual.ENTRA'
+Slack : -0.321
+TNS   : -1.108
+
+Type  : Fast Model Setup 'controlador:controller|estado_atual.E'
+Slack : -0.235
+TNS   : -0.629
+
+Type  : Fast Model Hold 'clk'
+Slack : -1.626
+TNS   : -44.755
+
+Type  : Fast Model Hold 'controlador:controller|estado_atual.E'
+Slack : -1.449
+TNS   : -1.449
+
+Type  : Fast Model Hold 'controlador:controller|estado_atual.ENTRA'
+Slack : -1.167
+TNS   : -5.451
+
+Type  : Fast Model Hold 'controlador:controller|estado_atual.BUSCA'
+Slack : -0.426
+TNS   : -0.426
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -1.222
+TNS   : -131.222
+
+Type  : Fast Model Minimum Pulse Width 'controlador:controller|estado_atual.BUSCA'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'controlador:controller|estado_atual.E'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'controlador:controller|estado_atual.ENTRA'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

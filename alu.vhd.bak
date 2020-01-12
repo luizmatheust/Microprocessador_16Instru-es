@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+--use ieee.numeric_std.all;
+entity alu is
+port(
+	mux1, mux2 : in std_logic_vector (15 downto 0);
+	alu_out    : out std_logic_vector(15 downto 0);
+	sel_I      : in std_logic_vector (2 downto 0)
+
+);
+end alu;
+
+architecture arch of alu is
+begin
+	process (sel_I)
+	begin
+		case(sel_I)is
+		
+		  when "000" => alu_out <= m1+m2;	  --SOMA
+		  when "001" => alu_out <= m1-m2;	  --SUBTRAÇAO
+		  when "010" => alu_out <= m1 and m2; --AND
+		  when "011" => alu_out <= m1 or m2;  --OR
+		  when "100" => alu_out <= not m2; 	  --NOT
+		  when "101" => alu_out <= m1 xor m2; --XOR
+		  when others => alu_out <= "00";
+	end case;
+	end process;
+end arch;
+		  
+		

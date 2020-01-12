@@ -1,0 +1,23 @@
+library ieee;
+USE ieee.std_logic_1164.ALL;
+
+entity mux8 is
+port(
+		a0, a1, a2, a3, a4, a5, a6, a7 : in std_logic_vector(7 downto 0 );
+		m : out std_logic_vector (7 downto 0);
+		sel_I: in std_logic_vector (2 downto 0)
+);
+end mux8;
+
+architecture arch of mux8 is
+begin
+	with sel_I(2 downto 0) select
+		m <= a0 when "000",
+			  a1 when "001",
+			  a2 when "010",
+			  a3 when "011",
+			  a4 when "100",
+			  a5 when "101",
+			  a6 when "110",
+			  a7 when others;
+end arch;
